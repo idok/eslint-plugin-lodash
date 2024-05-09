@@ -50,7 +50,11 @@ const recommended = {
         'lodash/unwrap': 2
     }
 }
-module.exports = {
+
+const plugin = {
+    meta:  {
+        name: 'eslint-plugin-lodash'
+    },
     rules: _.zipObject(rules, rules.map(rule => require(`./rules/${rule}`))),
     configs: {
         recommended,
@@ -104,5 +108,8 @@ module.exports = {
                 'lodash/unwrap': 2
             }
         }
-    }
+    },
+    processors: {}
 }
+
+module.exports = plugin;

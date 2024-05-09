@@ -22,7 +22,7 @@ module.exports = {
      * @param {string} featureName
      */
     isEcmaFeatureOn(context, featureName) {
-        return _.get(context, ['ecmaFeatures', featureName]) || (_.get(context, ['parserOptions', 'ecmaVersion'], 0) > 5)
+        return _.get(context, ['ecmaFeatures', featureName]) || (_.get(context, ['languageOptions', 'parserOptions', 'ecmaVersion'], 0) > 5)
     }
 }
 

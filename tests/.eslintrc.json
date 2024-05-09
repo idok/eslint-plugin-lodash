@@ -1,5 +1,5 @@
 {
-  "parserOptions": {
+  "languageOptions": {
     "ecmaVersion": 6
   },
   "env": {

@@ -38,7 +38,7 @@ ruleTester.run('prefer-find', rule, {
         ].map(withDefaultPragma),
         toFindError({
             code: 'import first from "lodash/first"; import filter from "lodash/filter"; const x = first(filter(x, f))',
-            parserOptions: {
+            languageOptions: {
                 sourceType: 'module'
             }
         })

@@ -28,7 +28,7 @@ const testCases = {
         ].map(code => ({code, options: ['never']})),
         default: [
             'import {map, filter, uniq} from "lodash"; var x = map(filter(uniq(a), g), f)'
-        ].map(code => ({code, parserOptions: {sourceType: 'module'}})),
+        ].map(code => ({code, languageOptions: {sourceType: 'module'}})),
         implicit: [
             'var x = _(x).map(f).filter(g).uniq().value()',
             'var x = _.map(_.compact(_.cloneDeep(t)), f)'
@@ -40,8 +40,8 @@ const testCases = {
             'import _map from "lodash/map"; import _filter from "lodash/filter"; var x = _map(_filter(_.uniq(a), g), f)'
         ].map(code => ({
             code, 
-            options: ['always'], 
-            parserOptions: {sourceType: 'module'},
+            options: ['always'],
+            languageOptions: {sourceType: 'module'},
             errors: [{messageId: 'always'}]
         })),
         single: [

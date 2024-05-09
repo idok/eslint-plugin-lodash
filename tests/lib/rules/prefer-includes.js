@@ -33,7 +33,7 @@ ruleTester.run('prefer-includes', rule, {
         'x = 0 <= _.indexOf(a, b)'
     ].map(withDefaultPragma).concat([{
         code: 'import io from "lodash/indexOf"; x = io(a) !== -1',
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]).map(toErrorObject)

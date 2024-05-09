@@ -31,7 +31,7 @@ ruleTester.run('prefer-filter', rule, {
         '_.forEach(arr, function(x) { if (!x.a.b.c) {}})'
     ].map(withDefaultPragma).concat([{
         code: 'import f from "lodash/forEach"; f(arr, (x) => { if (x) {}})',
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]).map(toErrorObject)

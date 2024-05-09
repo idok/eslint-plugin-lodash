@@ -1,18 +1,12 @@
 'use strict'
 const _ = require('lodash')
 
-function fromMessage(message) {
-    return fromOptions({errors: [{message}]})
-}
+const fromMessage = message => fromOptions({errors: [{message}]});
 
-function fromMessageId(messageId) {
-    return fromOptions({errors: [{messageId}]})
-}
+const fromMessageId = messageId => fromOptions({errors: [{messageId}]});
 
 function fromOptions(options) {
-    return function (testCase) {
-        return _.isString(testCase) ? _.assign({code: testCase}, options) : _.defaultsDeep(testCase, options)
-    }
+    return testCase => _.isString(testCase) ? _.assign({code: testCase}, options) : _.defaultsDeep(testCase, options)
 }
 
 module.exports = {

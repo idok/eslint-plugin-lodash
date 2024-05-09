@@ -39,7 +39,7 @@ ruleTester.run('prefer-lodash-method', rule, {
             'var x = Object.create(null)',
             {
                 code: 'import {chain} from "lodash"; var x = chain(a).map(f).value()',
-                parserOptions: {sourceType: 'module'}
+                languageOptions: {sourceType: 'module'}
             }
         ].map(withDefaultPragma),
         ...[

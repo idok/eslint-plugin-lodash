@@ -29,7 +29,7 @@ ruleTester.run('prefer-compact', rule, {
         '_.filter(arr)'
     ].map(withDefaultPragma).concat([{
         code: 'import f from "lodash/filter"; f(arr, Boolean)',
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]).map(toErrorObject)

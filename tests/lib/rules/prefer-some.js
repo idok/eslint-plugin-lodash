@@ -37,7 +37,7 @@ ruleTester.run('prefer-some', rule, {
         {code: '0 <= a.findIndex(b)', options: [{includeNative: true}]}
     ].map(withDefaultPragma).concat([{
         code: 'import io from "lodash/findIndex"; x = io(a) !== -1',
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]).map(toErrorObject)

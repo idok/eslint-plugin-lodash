@@ -22,7 +22,7 @@ ruleTester.run('no-commit', rule, {
     invalid: [{
         code: 'import _ from "lodash"; _(arr).map(f).commit();',
         errors,
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]

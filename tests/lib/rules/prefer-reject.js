@@ -27,7 +27,7 @@ ruleTester.run('prefer-reject', rule, {
         '_.filter(arr, _.negate(f));'
     ].map(withDefaultPragma).concat([{
         code: 'import f from "lodash/filter"; t = f(arr, x => !x.a)',
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]).map(toErrorObject)

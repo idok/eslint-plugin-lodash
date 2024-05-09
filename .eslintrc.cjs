@@ -1,7 +1,7 @@
-{
+module.exports = {
     "extends": [
         "wix-editor/node",
-        "plugin:eslint-plugin/recommended"
+        "eslint:recommended"
     ],
     "plugins": ["eslint-plugin"],
     "rules": {
@@ -10,6 +10,7 @@
         "no-extra-parens": 0,
         "quote-props": [2, "as-needed"],
         "strict": [2, "global"],
-        "eslint-plugin/prefer-message-ids": 0
-    }
+        "eslint-plugin/prefer-message-ids": 0,
+    },
+    "ignorePatterns": ["dist/"]
 }

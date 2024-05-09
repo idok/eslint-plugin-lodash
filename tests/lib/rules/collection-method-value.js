@@ -38,9 +38,7 @@ ruleTester.run('collection-method-value', rule, {
         '_.chain(arr).find(p).map(f).value()',
         {
             code: 'import f from "lodash/map"; f(x, g)',
-            parserOptions: {
-                sourceType: 'module'
-            }
+            languageOptions: {sourceType: 'module'}
         }
     ].map(withDefaultPragma).map(fromMessage('Use value returned from _.map')))
 })

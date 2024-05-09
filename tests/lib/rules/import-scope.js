@@ -23,7 +23,7 @@ const messages = {
 
 const withOption = option => fromOptions({options: [option]})
 const withOptionAndMessage = option => fromOptions({options: [option], errors: [{message: messages[option]}]})
-const fromModule = fromOptions({parserOptions: {sourceType: 'module'}})
+const fromModule = fromOptions({languageOptions: {sourceType: 'module'}})
 
 const testCases = {
     valid: {
@@ -154,6 +154,7 @@ const testCases = {
         }
     }
 }
+
 ruleTester.run('import-scope', rule, {
     valid: [
         ...testCases.valid.method.require,
@@ -187,6 +188,11 @@ ruleTester.run('import-scope', rule, {
         ...[
             ...testCases.invalid['method-package'].require,
             ...testCases.invalid['method-package'].import
-        ].map(withOptionAndMessage('method-package'))
+        ].map(withOptionAndMessage('method-package')),
+        {
+            code: "import {map} from 'lodash'\n",
+            languageOptions: {sourceType: 'module'},
+            errors: [{message: messages.method}]
+        }
     ]
 })

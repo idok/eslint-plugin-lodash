@@ -31,7 +31,6 @@ ruleTester.run('prefer-times', rule, {
     invalid: [
         '_(arr).map(function(){return g}).value()',
         '_.map(arr, function() {return Math.random()});',
-        '_(arr).map(() => a.push(f()))',
         '_(arr).map(() => a.push(f()))'
     ].map(withDefaultPragma).map(toErrorObject)
 })

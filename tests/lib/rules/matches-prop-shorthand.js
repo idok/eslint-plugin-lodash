@@ -77,7 +77,7 @@ ruleTester.run('matches-prop-shorthand', rule, {
         }
     ].map(withDefaultPragma).concat([{
         code: 'import {map} from "lodash"; function foo() {map(bar, function(x) { return x})}',
-        parserOptions: {
+        languageOptions: {
             ecmaVersion: 6,
             sourceType: 'module'
         }

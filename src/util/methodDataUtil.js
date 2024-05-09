@@ -61,6 +61,7 @@ function isCollectionMethod(version, method) {
  * Returns whether the node's method call supports using shorthands in the specified version
  * @param {Number} version
  * @param {string} method
+ * @param [shorthandType]
  * @returns {boolean}
  */
 function methodSupportsShorthand(version, method, shorthandType) {
@@ -78,6 +79,7 @@ function methodSupportsShorthand(version, method, shorthandType) {
 function isWrapperMethod(version, method) {
     return _.get(getMethodData(version), [method, 'wrapper'], false)
 }
+
 /**
  * Gets whether the suspect is an alias of the method in a given version
  * @param {Number} version

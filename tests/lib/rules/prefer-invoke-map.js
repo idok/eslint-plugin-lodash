@@ -28,8 +28,6 @@ ruleTester.run('prefer-invoke-map', rule, {
         '_.map(arr, x => x.f())'
     ].map(withDefaultPragma).concat([{
         code: 'import m from "lodash/map"; m(a, x => x.f())',
-        parserOptions: {
-            sourceType: 'module'
-        }
+        languageOptions: {sourceType: 'module'}
     }]).map(toErrorObject)
 })

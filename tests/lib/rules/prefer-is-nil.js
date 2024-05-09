@@ -34,7 +34,7 @@ ruleTester.run('prefer-is-nil', rule, {
         'var t = !_.isNull(x) && !_.isUndefined(x)'
     ].map(withDefaultPragma).concat([{
         code: 'import iu from "lodash/isUndefined"; import inu from "lodash/isNull"; var t = iu(x) || inu(x)',
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }]).map(toErrorObject)

@@ -23,8 +23,8 @@ ruleTester.run('collection-return', rule, {
         'function x(a) {return a;}',
         'y = _.reject(x, p => p); _.forEach(t, s => {}).value();',
         '_.map(a, x => f(x).then(() => {g()}))',
-        {code: '_.map(x, async t => {})', parserOptions: {ecmaVersion: 8}},
-        {code: '_.map(x, function*(t) {})', parserOptions: {ecmaVersion: 6}}
+        {code: '_.map(x, async t => {})', languageOptions: {parserOptions: {ecmaVersion: 8}}},
+        {code: '_.map(x, function*(t) {})', languageOptions: {parserOptions: {ecmaVersion: 6}}}
     ].map(withDefaultPragma),
     invalid: [{
         code: '_.map(arr, function(a) {console.log(a)})',
@@ -38,15 +38,13 @@ ruleTester.run('collection-return', rule, {
     }, {
         code: '_.reduce(arr, a => {f(a)})',
         errors: [{message: 'Do not use _.reduce without returning a value'}],
-        parserOptions: {ecmaVersion: 6}
+        languageOptions: {ecmaVersion: 6}
     }, {
         code: '_.map(arr, function x(a) {arr2.push(a)})',
         errors: [{message: 'Do not use _.map without returning a value'}]
     }].map(withDefaultPragma).concat([{
         code: 'import m from "lodash/map"; m(arr, x => {})',
         errors: [{message: 'Do not use _.map without returning a value'}],
-        parserOptions: {
-            sourceType: 'module'
-        }
+        languageOptions: {sourceType: 'module'}
     }])
 })

@@ -2,6 +2,7 @@
 const assert = require('assert')
 const v4 = require('../../../src/util/methodDataByVersion/4')
 const _ = require('lodash')
+
 describe('methodData', () => {
     it('should have an entry for every item on Lodash', () => {
         const functions = _.keys(_.pickBy(_, m => _.isFunction(m) && m !== _))

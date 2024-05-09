@@ -36,7 +36,7 @@ module.exports = {
         }
 
         function isDeclaredVariable(node) {
-            const definedVariables = context.getScope().variables
+            const definedVariables = context.sourceCode.getScope(node).variables
             return some(definedVariables, {name: node.name})
         }
 

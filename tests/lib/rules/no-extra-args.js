@@ -27,7 +27,7 @@ ruleTester.run('no-extra-args', rule, {
     }].map(withDefaultPragma).concat([{
         code: 'import uniq from "lodash/uniq"; var x = uniq(arr, "prop")',
         errors: [{message: 'Too many arguments passed to `uniq` (expected 1).'}],
-        parserOptions: {
+        languageOptions: {
             sourceType: 'module'
         }
     }])

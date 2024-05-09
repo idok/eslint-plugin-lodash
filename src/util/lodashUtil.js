@@ -117,6 +117,13 @@ function getLodashMethodVisitors(context, lodashCallExpVisitor) {
     return visitors
 }
 
+/**
+ * @param context
+ * @param checks
+ * @param messages
+ * @param [shorthandType]
+ * @returns {{ImportDeclaration({source: *, specifiers: *}): void, VariableDeclarator({init: *, id: *}): void}}
+ */
 function getShorthandVisitors(context, checks, messages, shorthandType) {
     const lodashContext = new LodashContext(context)
     const visitors = lodashContext.getImportVisitors()

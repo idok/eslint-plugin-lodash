@@ -16,13 +16,19 @@ module.exports = {
             url: getDocsUrl('matches-shorthand')
         },
         schema: [{
+            // when to use the shorthand: always or never (default is always).
             enum: ['always', 'never']
         }, {
+            // the maximum path length (default is 3).
             type: 'integer',
             minimum: 1
         }, {
+            // whether to include computed properties (default is false). This is only possible when the ES6 computed object properties feature is on.
             type: 'boolean'
         }, {
+            // an object with one possible property - onlyLiterals (default to false). This exists because changing to a matches will do a deep comparison rather than an instance equality check,
+            // so in some circumstances the rule could error on a line that if changed would change behaviour.
+            // However, switching on onlyLiterals will not warn on comparing with variables since it is difficult to determine the possible types of variables used.
             type: 'object',
             properties: {
                 onlyLiterals: {
@@ -79,7 +85,6 @@ module.exports = {
         function usesShorthand(node, iteratee) {
             return iteratee && iteratee.type === 'ObjectExpression'
         }
-
 
         return getShorthandVisitors(context, {
             canUseShorthand,

@@ -17,14 +17,13 @@ module.exports = {
             url: getDocsUrl('prefer-invoke-map')
         }
     },
-
     create(context) {
         const {getLodashMethodVisitors} = require('../util/lodashUtil')
         const {isCallFromObject, getValueReturnedInFirstStatement, getFirstParamName} = require('../util/astUtil')
         const {isAliasOfMethod} = require('../util/methodDataUtil')
 
         function isOnlyUsedForObject(func, firstParamName) {
-            const declaredVariables = context.getDeclaredVariables(func)
+            const declaredVariables = context.sourceCode.getDeclaredVariables(func)
             return declaredVariables.every(variable => variable.references.length === 0 || (variable.name === firstParamName && variable.references.length === 1))
         }
 
