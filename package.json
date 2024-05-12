@@ -38,6 +38,16 @@
   },
   "homepage": "https://github.com/idok/eslint-plugin-lodash",
   "bugs": "https://github.com/idok/eslint-plugin-lodash/issues",
+  "engines": {
+    "node": ">=10"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "lodash"
+  ],
+  "license": "MIT",
   "peerDependencies": {
     "eslint": ">=9.0.0"
   },
@@ -54,16 +64,6 @@
     "mocha": "^10.4.0",
     "nyc": "^15.1.0"
   },
-  "engines": {
-    "node": ">=10"
-  },
-  "keywords": [
-    "eslint",
-    "eslint-plugin",
-    "eslintplugin",
-    "lodash"
-  ],
-  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.21"
   },
