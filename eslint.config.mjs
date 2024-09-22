@@ -20,10 +20,10 @@ export default [
         },
         ignores: [
             "dist/",
-            // ".yarn/**",
+            ".yarn/**",
             "node_modules",
             "reports",
-            "coverage",
+            "coverage/*",
             "/lib"
         ]
     }

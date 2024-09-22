@@ -12,5 +12,5 @@ module.exports = {
         "strict": [2, "global"],
         "eslint-plugin/prefer-message-ids": 0,
     },
-    "ignorePatterns": ["dist/"]
+    "ignorePatterns": ["dist/", ".yarn/**", "node_modules", "reports", "coverage", "/lib"]
 }

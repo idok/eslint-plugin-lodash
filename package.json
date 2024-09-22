@@ -56,7 +56,6 @@
     "coveralls": "^3.1.1",
     "cross-env": "^7.0.3",
     "eslint": "^9.11.0",
-    "eslint-config-wix-editor": "^8.4.2",
     "eslint-import-resolver-node": "^0.3.9",
     "eslint-plugin-eslint-plugin": "^6.2.0",
     "eslint-traverser": "^1.5.2",
@@ -66,5 +65,5 @@
   "dependencies": {
     "lodash": "^4.17.21"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.5.0"
 }
