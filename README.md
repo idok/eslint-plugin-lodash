@@ -1,7 +1,7 @@
 ESLint-Plugin-Lodash
 ===================
 
-[![Maintenance Status][status-image]][status-url] [![NPM version][npm-image]][npm-url] [![Dependencies][deps-image]][deps-url] [![Build Status][build-image]][build-url]
+[![Maintenance Status][status-image]][status-url] [![NPM version][npm-image]][npm-url] [![Yarn CI][build-image]][build-url]
 
 Lodash-specific linting rules for ESLint.
 # News
@@ -128,12 +128,8 @@ ESLint-plugin-lodash is licensed under the [MIT License](http://www.opensource.o
 [npm-url]: https://npmjs.org/package/eslint-plugin-lodash
 [npm-image]: http://img.shields.io/npm/v/eslint-plugin-lodash.svg?style=flat-square
 
-[deps-url]: https://david-dm.org/wix/eslint-plugin-lodash
-[deps-image]: https://img.shields.io/david/dev/wix/eslint-plugin-lodash.svg?style=flat-square
-
-
-[status-url]: https://github.com/wix/eslint-plugin-lodash/pulse
+[status-url]: https://github.com/idok/eslint-plugin-lodash/pulse
 [status-image]: http://img.shields.io/badge/status-maintained-brightgreen.svg?style=flat-square
 
-[build-image]: https://travis-ci.org/wix/eslint-plugin-lodash.svg?branch=master
-[build-url]: https://travis-ci.org/wix/eslint-plugin-lodash
+[build-image]: https://github.com/idok/eslint-plugin-lodash/actions/workflows/yarn.yml/badge.svg
+[build-url]: https://github.com/idok/eslint-plugin-lodash/actions/workflows/yarn.yml
