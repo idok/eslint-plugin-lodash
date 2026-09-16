@@ -130,12 +130,12 @@ function getShorthandVisitors(context, checks, messages, shorthandType) {
     visitors.CallExpression = getLodashMethodCallExpVisitor(lodashContext, {
         always(node, iteratee, {method, version}) {
             if (methodDataUtil.methodSupportsShorthand(version, method, shorthandType) && checks.canUseShorthand(iteratee, lodashContext)) {
-                context.report(iteratee, messages.always)
+                context.report({node: iteratee, message: messages.always})
             }
         },
         never(node, iteratee, {method}) {
             if (checks.usesShorthand(node, iteratee, method)) {
-                context.report(iteratee || node.callee.property, messages.never)
+                context.report({node: iteratee || node.callee.property, message: messages.never})
             }
         }
     }[context.options[0] || 'always'])
