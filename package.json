@@ -39,7 +39,7 @@
   "homepage": "https://github.com/idok/eslint-plugin-lodash",
   "bugs": "https://github.com/idok/eslint-plugin-lodash/issues",
   "engines": {
-    "node": ">=10"
+    "node": ">=20"
   },
   "keywords": [
     "eslint",
@@ -52,14 +52,14 @@
     "eslint": ">=9.0.0"
   },
   "devDependencies": {
-    "auto-changelog": "^2.6.1",
+    "auto-changelog": "^2.7.0",
     "coveralls": "^3.1.1",
     "cross-env": "^10.1.0",
-    "eslint": "^9.11.0",
+    "eslint": ">= 9.11",
     "eslint-import-resolver-node": "^0.4.0",
-    "eslint-plugin-eslint-plugin": "^6.2.0",
+    "eslint-plugin-eslint-plugin": "^7.6.2",
     "eslint-traverser": "^1.5.2",
-    "mocha": "^12.0.1",
+    "mocha": "^12.0.3",
     "nyc": "^18.0.0"
   },
   "dependencies": {

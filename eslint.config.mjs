@@ -17,14 +17,16 @@ export default [
             "quote-props": [2, "as-needed"],
             "strict": [0, "global"],
             "eslint-plugin/prefer-message-ids": 0
-        },
+        }
+    },
+    {
         ignores: [
             "dist/",
             ".yarn/**",
             "node_modules",
             "reports",
             "coverage/*",
-            "/lib"
+            "lib/"
         ]
     }
 ]

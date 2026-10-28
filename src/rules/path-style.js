@@ -103,7 +103,7 @@ module.exports = {
             return `\`${node.elements
                 .map(el => {
                     if (el.type === 'MemberExpression') {
-                        return `.\$\{${context.getSourceCode().getText(el)}\}`
+                        return `.\$\{${context.sourceCode.getText(el)}\}`
                     }
                     if (canBeDotNotation(el)) {
                         return `.${el.value}`
@@ -111,7 +111,7 @@ module.exports = {
                     if (isLiteral(el)) {
                         return `[${el.value}]`
                     }
-                    return `\$\{${context.getSourceCode().getText(el)}\}`
+                    return `\$\{${context.sourceCode.getText(el)}\}`
                 })
                 .join('')
                 .replace(/^\./, '')}\``

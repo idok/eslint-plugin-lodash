@@ -37,7 +37,7 @@ const allImportsAreOfType = (node, types) => every(node.specifiers, specifier =>
  * @returns
  */
 const createFullFix = (context, node) => {
-    const sourceCode = context.getSourceCode()
+    const sourceCode = context.sourceCode
     const text = sourceCode.getText(node)
     if (!/.*(lodash)';$/.test(text)) {
         return () => []

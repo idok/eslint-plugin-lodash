@@ -90,7 +90,7 @@ module.exports = {
                 if (node.type === 'Identifier') {
                     return node.name
                 }
-                return context.getSourceCode().getText(node)
+                return context.sourceCode.getText(node)
             }
         }
 
